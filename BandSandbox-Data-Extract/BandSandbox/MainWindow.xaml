@@ -1,0 +1,153 @@
+﻿<Window x:Class="BandSandbox.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BandSandbox"
+        mc:Ignorable="d"
+        Title="BandSandbox" ResizeMode="NoResize" BorderThickness="0" Width="800" Height="600">
+
+    <Grid Margin="0,0,0,0" Width="780" Height="550">
+        <Button x:Name="authButton" Content="Sign-In" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="150" Click="authButton_Click" FontSize="13.333" BorderThickness="2" Height="30" FontWeight="Bold" Background="#FFE5E5E5"/>
+        <Button x:Name="getProfileButton" Content="Get Profile" HorizontalAlignment="Left" Margin="447,10,0,0" VerticalAlignment="Top" Width="150" Click="getProfileButton_Click" IsEnabled="False" FontSize="13.333" BorderThickness="2" Height="30" FontWeight="Bold" Background="#FFE5E5E5"/>
+        <Button x:Name="getDevicesButton" Content="Get Devices" HorizontalAlignment="Right" Margin="0,10,10,0" VerticalAlignment="Top" Width="150" Click="getDevicesButton_Click" IsEnabled="False" FontSize="13.333" BorderThickness="2" Height="30" FontWeight="Bold" Background="#FFE5E5E5"/>
+        <CheckBox x:Name="completeHistoryOpt" Content="Complete History" HorizontalAlignment="Right" Margin="0,73,21,0" VerticalAlignment="Top" Checked="optionCompleteHistory" Unchecked="optionCompleteHistory" BorderThickness="2" BorderBrush="#FF00B9F2" FontSize="13.333" IsEnabled="False"/>
+        <Label x:Name="textStartDate" Content="Start Date" HorizontalAlignment="Left" Margin="8,67,0,0" VerticalAlignment="Top" FontSize="13.333" FontWeight="Bold"/>
+        <Label x:Name="textEndDate" Content="End Date" HorizontalAlignment="Left" Margin="317,67,0,0" VerticalAlignment="Top" FontSize="13.333" FontWeight="Bold"/>
+        <Button x:Name="getHourlySummaryButton" Content="Get Hourly Summary" HorizontalAlignment="Left" Margin="10,123,0,0" VerticalAlignment="Top" Width="150" Click="getHourlySummaryButton_Click" IsEnabled="False" FontSize="13.333" BorderThickness="2" Height="30" FontWeight="Bold" Background="#FFE5E5E5"/>
+        <Button x:Name="getDailySummaryButton" Content="Get Daily Summary" HorizontalAlignment="Left" Margin="10,165,0,0" VerticalAlignment="Top" Width="150" Click="getDailySummaryButton_Click" IsEnabled="False" FontSize="13.333" BorderThickness="2" Height="30" FontWeight="Bold" Background="#FFE5E5E5"/>
+        <Label x:Name="textActType" Content="Activity Types" HorizontalAlignment="Left" Margin="10,220,0,0" VerticalAlignment="Top" FontSize="13.333" FontWeight="Bold"/>
+        <Label x:Name="textOptAct" Content="Activity Options" HorizontalAlignment="Left" Margin="10,253,0,0" VerticalAlignment="Top" FontSize="13.333" FontWeight="Bold"/>
+        <CheckBox x:Name="checkActRunning" Content="Running" HorizontalAlignment="Left" Margin="188,226,0,0" VerticalAlignment="Top" IsEnabled="False" BorderThickness="2" BorderBrush="#FF00B9F2" FontSize="13.333"/>
+        <CheckBox x:Name="checkActCycling" Content="Cycling" HorizontalAlignment="Left" Margin="276,226,0,0" VerticalAlignment="Top" IsEnabled="False" BorderThickness="2" BorderBrush="#FF00B9F2" FontSize="13.333"/>
+        <CheckBox x:Name="checkActWFree" Content="Workout (Free)" HorizontalAlignment="Left" Margin="363,226,0,0" VerticalAlignment="Top" IsEnabled="False" BorderThickness="2" BorderBrush="#FF00B9F2" FontSize="13.333"/>
+        <CheckBox x:Name="checkActWGuide" Content="Workout (Guided)" HorizontalAlignment="Left" Margin="492,226,0,0" VerticalAlignment="Top" IsEnabled="False" BorderThickness="2" BorderBrush="#FF00B9F2" FontSize="13.333"/>
+        <CheckBox x:Name="checkActGolf" Content="Golf" HorizontalAlignment="Left" Margin="642,226,0,0" VerticalAlignment="Top" IsEnabled="False" BorderThickness="2" BorderBrush="#FF00B9F2" FontSize="13.333"/>
+        <CheckBox x:Name="checkActSleep" Content="Sleep" HorizontalAlignment="Right" Margin="0,226,17,0" VerticalAlignment="Top" IsEnabled="False" BorderThickness="2" BorderBrush="#FF00B9F2" FontSize="13.333"/>
+        <Button x:Name="getActivitiesButton" Content="Get Activities" HorizontalAlignment="Left" Margin="10,292,0,0" VerticalAlignment="Top" Width="150" Click="getAcitvitiesButton_Click" IsEnabled="False" FontSize="13.333" BorderThickness="2" Height="30" FontWeight="Bold" Background="#FFE5E5E5"/>
+        <TextBlock x:Name="statusBar" Margin="10,0,0,10" TextWrapping="Wrap" Background="#66BFCDDB" Text="Application Status" FontSize="9.333" HorizontalAlignment="Left" Width="760" Height="34" VerticalAlignment="Bottom"/>
+        <WebBrowser x:Name="webView" HorizontalAlignment="Left" VerticalAlignment="Top" Navigated="Browser_NavigationCompleted" Margin="0" Visibility="Collapsed"/>
+        <ComboBox x:Name="selStartMonth" HorizontalAlignment="Left" Margin="85,67,0,0" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="100" IsEnabled="False" SelectionChanged="optionStartDateChanged" FontSize="13.333" BorderThickness="2" Height="30">
+            <ComboBoxItem Content="January"/>
+            <ComboBoxItem Content="February"/>
+            <ComboBoxItem Content="March"/>
+            <ComboBoxItem Content="April"/>
+            <ComboBoxItem Content="May"/>
+            <ComboBoxItem Content="June"/>
+            <ComboBoxItem Content="July"/>
+            <ComboBoxItem Content="August"/>
+            <ComboBoxItem Content="September"/>
+            <ComboBoxItem Content="October"/>
+            <ComboBoxItem Content="November"/>
+            <ComboBoxItem Content="December"/>
+        </ComboBox>
+        <ComboBox x:Name="selStartDay" HorizontalAlignment="Left" Margin="190,67,0,0" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="42" IsEnabled="False" SelectionChanged="optionStartDateChanged" FontSize="13.333" BorderThickness="2" Height="30">
+            <ComboBoxItem Content="01"/>
+            <ComboBoxItem Content="02"/>
+            <ComboBoxItem Content="03"/>
+            <ComboBoxItem Content="04"/>
+            <ComboBoxItem Content="05"/>
+            <ComboBoxItem Content="06"/>
+            <ComboBoxItem Content="07"/>
+            <ComboBoxItem Content="08"/>
+            <ComboBoxItem Content="09"/>
+            <ComboBoxItem Content="10"/>
+            <ComboBoxItem Content="11"/>
+            <ComboBoxItem Content="12"/>
+            <ComboBoxItem Content="13"/>
+            <ComboBoxItem Content="14"/>
+            <ComboBoxItem Content="15"/>
+            <ComboBoxItem Content="16"/>
+            <ComboBoxItem Content="17"/>
+            <ComboBoxItem Content="18"/>
+            <ComboBoxItem Content="19"/>
+            <ComboBoxItem Content="20"/>
+            <ComboBoxItem Content="21"/>
+            <ComboBoxItem Content="22"/>
+            <ComboBoxItem Content="23"/>
+            <ComboBoxItem Content="24"/>
+            <ComboBoxItem Content="25"/>
+            <ComboBoxItem Content="26"/>
+            <ComboBoxItem Content="27"/>
+            <ComboBoxItem Content="28"/>
+            <ComboBoxItem Content="29"/>
+            <ComboBoxItem Content="30"/>
+            <ComboBoxItem Content="31"/>
+        </ComboBox>
+        <ComboBox x:Name="selEndMonth" HorizontalAlignment="Left" Margin="388,67,0,0" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="100" IsEnabled="False" SelectionChanged="optionEndDateChanged" BorderThickness="2" Height="30" FontSize="13.333">
+            <ComboBoxItem Content="January"/>
+            <ComboBoxItem Content="February"/>
+            <ComboBoxItem Content="March"/>
+            <ComboBoxItem Content="April"/>
+            <ComboBoxItem Content="May"/>
+            <ComboBoxItem Content="June"/>
+            <ComboBoxItem Content="July"/>
+            <ComboBoxItem Content="August"/>
+            <ComboBoxItem Content="September"/>
+            <ComboBoxItem Content="October"/>
+            <ComboBoxItem Content="November"/>
+            <ComboBoxItem Content="December"/>
+        </ComboBox>
+        <ComboBox x:Name="selEndYear" HorizontalAlignment="Left" Margin="540,67,0,0" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="57" IsEnabled="False" SelectionChanged="optionEndDateChanged" FontSize="13.333" BorderThickness="2" Height="30">
+            <ComboBoxItem Content="2014"/>
+            <ComboBoxItem Content="2015"/>
+            <ComboBoxItem Content="2016"/>
+            <ComboBoxItem Content="2017"/>
+            <ComboBoxItem Content="2018"/>
+            <ComboBoxItem Content="2019"/>
+            <ComboBoxItem Content="2020"/>
+        </ComboBox>
+        <ComboBox x:Name="selEndDay" HorizontalAlignment="Left" Margin="493,67,0,0" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="42" IsEnabled="False" SelectionChanged="optionEndDateChanged" FontSize="13.333" BorderThickness="2" Height="30">
+            <ComboBoxItem Content="01"/>
+            <ComboBoxItem Content="02"/>
+            <ComboBoxItem Content="03"/>
+            <ComboBoxItem Content="04"/>
+            <ComboBoxItem Content="05"/>
+            <ComboBoxItem Content="06"/>
+            <ComboBoxItem Content="07"/>
+            <ComboBoxItem Content="08"/>
+            <ComboBoxItem Content="09"/>
+            <ComboBoxItem Content="10"/>
+            <ComboBoxItem Content="11"/>
+            <ComboBoxItem Content="12"/>
+            <ComboBoxItem Content="13"/>
+            <ComboBoxItem Content="14"/>
+            <ComboBoxItem Content="15"/>
+            <ComboBoxItem Content="16"/>
+            <ComboBoxItem Content="17"/>
+            <ComboBoxItem Content="18"/>
+            <ComboBoxItem Content="19"/>
+            <ComboBoxItem Content="20"/>
+            <ComboBoxItem Content="21"/>
+            <ComboBoxItem Content="22"/>
+            <ComboBoxItem Content="23"/>
+            <ComboBoxItem Content="24"/>
+            <ComboBoxItem Content="25"/>
+            <ComboBoxItem Content="26"/>
+            <ComboBoxItem Content="27"/>
+            <ComboBoxItem Content="28"/>
+            <ComboBoxItem Content="29"/>
+            <ComboBoxItem Content="30"/>
+            <ComboBoxItem Content="31"/>
+        </ComboBox>
+        <ComboBox x:Name="selStartYear" HorizontalAlignment="Left" Margin="237,67,0,0" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="62" IsEnabled="False" SelectionChanged="optionStartDateChanged" FontSize="13.333" BorderThickness="2" Height="30">
+            <ComboBoxItem Content="2014"/>
+            <ComboBoxItem Content="2015"/>
+            <ComboBoxItem Content="2016"/>
+            <ComboBoxItem Content="2017"/>
+            <ComboBoxItem Content="2018"/>
+            <ComboBoxItem Content="2019"/>
+        </ComboBox>
+        <Button x:Name="exitAppButton" Content="Exit BandSandbox" HorizontalAlignment="Right" Margin="0,0,10,228" Width="150" Click="exitAppButton_Click" FontSize="13.333" BorderThickness="2" FontWeight="Bold" Background="#FFE5E5E5" Height="30" VerticalAlignment="Bottom"/>
+        <ComboBox x:Name="selOptionalData" HorizontalAlignment="Left" Margin="132,255,0,0" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="289" SelectionChanged="optionEndDateChanged" FontSize="13.333" BorderThickness="2" IsEnabled="False">
+            <ComboBoxItem Content="Basic Activity Summary Data"/>
+            <ComboBoxItem Content="GPS Data &amp; Segment Details"/>
+            <ComboBoxItem Content="Minute Interval Summaries"/>
+        </ComboBox>
+        <Label x:Name="label" Content="Note: Details and Minute Summaries may take minutes to download." HorizontalAlignment="Left" Margin="443,255,0,0" VerticalAlignment="Top" FontSize="9.333"/>
+        <CheckBox x:Name="checkActAll" Content="All" HorizontalAlignment="Left" Margin="132,226,0,0" VerticalAlignment="Top" IsEnabled="False" BorderThickness="2" BorderBrush="#FF00B9F2" FontSize="13.333" Checked="optionActivitiesAll" Unchecked="optionActivitiesAll"/>
+        <TextBlock x:Name="responseText" Margin="10,0,0,106" TextWrapping="Wrap" Background="#66BFCDDB" Text="Data Stream" FontSize="9.333" HorizontalAlignment="Left" Width="760" Height="106" VerticalAlignment="Bottom"/>
+        <TextBlock x:Name="statusURL" Margin="10,0,0,49" TextWrapping="Wrap" Background="#66BFCDDB" Text="URL Requests" FontSize="9.333" HorizontalAlignment="Left" Width="760" Height="52" VerticalAlignment="Bottom"/>
+        <Label x:Name="textHistoryNote" Content="(October 2014 - Current)" Margin="0,88,17,0" VerticalAlignment="Top" FontSize="9.333" HorizontalAlignment="Right"/>
+    </Grid>
+</Window>

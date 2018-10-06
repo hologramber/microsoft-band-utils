@@ -1,0 +1,157 @@
+<GridLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity"
+    android:padding="15dp">
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Band Version"
+        android:id="@+id/textView"
+        android:layout_row="1"
+        android:layout_column="0"
+        android:textSize="15dp"
+        android:textStyle="bold" />
+
+    <TextView android:text="Version" android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/BandVer"
+        android:textSize="15dp"
+        android:layout_below="@+id/BandHR"
+        android:layout_row="2"
+        android:layout_column="0" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Band Firmware"
+        android:id="@+id/textView2"
+        android:layout_row="3"
+        android:layout_column="0"
+        android:textSize="15dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Firmware"
+        android:id="@+id/BandFVer"
+        android:textSize="15dp"
+        android:layout_below="@+id/BandVer"
+        android:layout_row="4"
+        android:layout_column="0" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Heart Rate (beats per minute)"
+        android:id="@+id/textView3"
+        android:layout_row="5"
+        android:layout_column="0"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:paddingTop="15dp" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Heart Rate"
+        android:id="@+id/BandHR"
+        android:textSize="15dp"
+        android:layout_row="6"
+        android:layout_column="0" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Skin Temperature (degrees C)"
+        android:id="@+id/textView4"
+        android:layout_row="7"
+        android:layout_column="0"
+        android:textSize="15dp"
+        android:textStyle="bold" />
+
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Skin Temp"
+        android:id="@+id/BandTemp"
+        android:textSize="15dp"
+        android:layout_below="@+id/BandHR"
+        android:layout_row="8"
+        android:layout_column="0" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Accelerometer"
+        android:id="@+id/textView5"
+        android:layout_row="9"
+        android:layout_column="0"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:paddingTop="15dp" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="XYZ"
+        android:id="@+id/BandAccel"
+        android:layout_row="10"
+        android:layout_column="0"
+        android:textSize="15dp" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Gyroscope (Angular Velocity)"
+        android:id="@+id/textView7"
+        android:layout_row="11"
+        android:layout_column="0"
+        android:textSize="15dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="XYZ"
+        android:id="@+id/BandGyro"
+        android:layout_row="12"
+        android:layout_column="0"
+        android:textIsSelectable="false"
+        android:textSize="15dp" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="UV Index Level"
+        android:id="@+id/textView9"
+        android:layout_row="13"
+        android:layout_column="0"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:paddingTop="15dp" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="UV Reading"
+        android:id="@+id/BandUV"
+        android:layout_row="14"
+        android:layout_column="0"
+        android:textSize="15dp" />
+
+
+</GridLayout>
