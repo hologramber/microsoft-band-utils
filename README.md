@@ -1,12 +1,18 @@
 # Band-Data-Analysis
+
+**These are all archived projects. The Microsoft Band no longer exists!**
+
 Python scripts for analyzing/visualizing data acquired with the Microsoft Band (and downloaded via the Microsoft Health API).
 
-Download your data: https://github.com/kairozu/Microsoft-Band-Utils/tree/master/BandSandbox-Data-Extract
+Download your data: https://github.com/cryptogramber/Microsoft-Band-Utils/tree/master/BandSandbox-Data-Extract
 
 Microsoft Health API: https://developer.microsoftband.com/cloudAPI
 
 # BandSandbox-Data-Extract
+
 Simple WPF app which uses the MS Health Cloud API to download user-specified data sets acquired with the Microsoft Band. 
+
+![bandsandbox](https://user-images.githubusercontent.com/83111496/189474882-7e160329-0113-48f9-8dd2-1e5e0b53dd0e.png)
 
 Information on using the Microsoft Health Cloud API:
 https://developer.microsoftband.com/cloudAPI
@@ -23,7 +29,7 @@ Time for requesting 1 year+5 days (572 activities) worth of...
 - All Activities: Minute Interval Summaries: 18 min, 42 sec (this required additional delays between requests to avoid being throttled for going over the bandwidth limits)
 
 Updates:
-- 2015/11/01: The beginnings of some rough Python scripts for plotting Daily Summary, Hourly Summary, and Activity Summary data are here: https://github.com/kairozu/Microsoft-Band-Utils/tree/master/Band-Data-Analysis
+- 2015/11/01: The beginnings of some rough Python scripts for plotting Daily Summary, Hourly Summary, and Activity Summary data are here: https://github.com/cryptogramber/Microsoft-Band-Utils/tree/master/Band-Data-Analysis
 - 2015/11/06: Added rate limiting to avoid being throttled by MS health cloud for too many requests/too much bandwidth.
 - 2017/08/06: Updated the range of possible dates to include 2017-2019.
 - 2017/09/01: Fixed date processing; thanks to Pru for helping me debug. :)
